@@ -1,0 +1,44 @@
+{
+  "tools": [
+    {
+      "name": "get_conveyor_status",
+      "description": "Return cached last Arduino acknowledgement. No serial writes; NOT measured belt state.",
+      "input_schema": {
+        "properties": {},
+        "title": "get_conveyor_statusArguments",
+        "type": "object"
+      },
+      "annotations": {
+        "read_only_hint": true
+      }
+    },
+    {
+      "name": "start_conveyor",
+      "description": "Physically start conveyor via Arduino relay D7. Keeps running after client disconnect.\n\n        Invoke only following an explicit operator command or approved control decision.\n        ",
+      "input_schema": {
+        "properties": {},
+        "title": "start_conveyorArguments",
+        "type": "object"
+      },
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": true,
+        "idempotent_hint": true
+      }
+    },
+    {
+      "name": "stop_conveyor",
+      "description": "Send relay OFF and await Arduino acknowledgement. Does not measure physical stopping.",
+      "input_schema": {
+        "properties": {},
+        "title": "stop_conveyorArguments",
+        "type": "object"
+      },
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": true,
+        "idempotent_hint": true
+      }
+    }
+  ]
+}

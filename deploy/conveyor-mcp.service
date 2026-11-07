@@ -1,0 +1,22 @@
+[Unit]
+Description=Orin Nano 2 Conveyor MCP Server
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=<USER>
+SupplementaryGroups=dialout
+WorkingDirectory=/home/<USER>/conveyor-mcp
+EnvironmentFile=/etc/conveyor-mcp/environment
+ExecStart=/home/<USER>/conveyor-mcp/.venv/bin/python /home/<USER>/conveyor-mcp/server.py --host <JETSON_IP> --lock-file /tmp/duck-pick.lock
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
