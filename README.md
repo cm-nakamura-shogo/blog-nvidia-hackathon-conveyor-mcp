@@ -1,4 +1,4 @@
-# blog-jetson-conveyor-mcp
+# blog-nvidia-hackathon-conveyor-mcp
 
 外部制御端子のない市販のベルトコンベアを、リレーと Arduino UNO を挟んで Jetson から回す・止めるできるようにし、MCP サーバーとして公開するサンプルです。
 
