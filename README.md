@@ -2,7 +2,7 @@
 
 外部制御端子のない市販のベルトコンベアを、リレーと Arduino UNO を挟んで Jetson から回す・止めるできるようにし、MCP サーバーとして公開するサンプルです。
 
-ブログ記事: <!-- TODO: 記事のURL -->
+ブログ記事: https://dev.classmethod.jp/articles/nvidia-hackathon-conveyor-mcp/
 
 ## 構成
 
